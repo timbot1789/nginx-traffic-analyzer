@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Entrypoint Object. Executed in config.ru
 class App < Roda
   plugin :render, views: 'src/views'
   plugin :assets, css: 'styles.css'
