@@ -1,23 +1,25 @@
-require "roda"
+# frozen_string_literal: true
 
 class App < Roda
-  plugin :render, views: "src/views"
+  plugin :render, views: 'src/views'
+  plugin :assets, css: 'styles.css'
 
   route do |r|
+    r.assets
     r.root do
-      r.redirect "/home"
+      r.redirect '/home'
     end
-    r.on "vw" do
+    r.on 'vw' do
       r.is do
         r.get do
-          view("vw_log_view")
+          view('vw_log_view')
         end
       end
     end
-    r.on "home" do
+    r.on 'home' do
       r.is do
         r.get do
-          "Bylarge"
+          'Bylarge'
         end
       end
     end
