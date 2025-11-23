@@ -10,9 +10,10 @@ class App < Roda
     r.root do
       r.redirect '/home'
     end
-    r.on 'vw' do
+    r.on 'admin' do
       r.is do
         r.get do
+          Controllers::AdminLogController.new.get_view_model
           view('vw_log_view')
         end
       end

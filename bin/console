@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'zeitwerk'
+require 'roda'
+require 'debug'
+require 'rack'
+require 'logger'
+
+loader = Zeitwerk::Loader.new
+loader.push_dir('src/')
+loader.setup
+
+app = Rack::CommonLogger.new(App.freeze.app, Logger.new('logfile.log'))
+binding.break
