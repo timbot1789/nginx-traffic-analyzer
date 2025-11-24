@@ -9,7 +9,7 @@ module Helpers
           \s
           (?<identd>\S*)
           \s
-          (?<userid>\S*)
+          (?<user_id>\S*)
           \s
           \[(?<timestamp>.*?)\]
           \s
@@ -31,7 +31,7 @@ module Helpers
           \s
           (?<identd>\S*)
           \s
-          (?<userid>\S*)
+          (?<user_id>\S*)
           \s
           \[(?<timestamp>.*?)\]
           \s
